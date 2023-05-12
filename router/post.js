@@ -2,34 +2,6 @@
 const express= require ("express");
 const helper=require("../healper.js")
 const router=express.Router()
-const testMiddleware= require("../middleware/middel.js")
-
-
-
-
-router.use(testMiddleware)
-router.use((req,res,next)=>{
-    console.log(`${req.PORT}-- ${req.method}--${req.url}-- ${new Date()}`)
-next();
-})
-//الطريقة دي اسمها  middlware router level
-
-router.use("/",(req,res,next)=>{
-    const login=true
-    // const login=false
-     login?next():res.send("plz login")
-})
-
-
-
-
-
-
-
-
-
-
-
 
 //route show data from json file
 router.get('/',(req, res)=>{//check and uncheck
